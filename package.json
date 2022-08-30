@@ -1,0 +1,24 @@
+{
+  "name": "restful-api-nodejs",
+  "version": "1.0.0",
+  "description": "Simple RESTful API using Nodejs, Express and MongoDB",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "dev": "nodemon app",
+    "test": "jest --watchAll --verbose"
+  },
+  "keywords": [],
+  "author": "Ali Ghoreishi",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "jest": "^29.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.10",
+    "nodemon": "^2.0.15",
+    "supertest": "^6.2.4"
+  }
+}

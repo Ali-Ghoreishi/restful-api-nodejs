@@ -60,7 +60,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3030/users/630dfa3ca088793d6a2eeda2",
+					"raw": "http://localhost:3030/users/630f0b8b3ecbc03a6069f2dc",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -68,7 +68,7 @@
 					"port": "3030",
 					"path": [
 						"users",
-						"630dfa3ca088793d6a2eeda2"
+						"630f0b8b3ecbc03a6069f2dc"
 					]
 				}
 			},
@@ -80,22 +80,16 @@
 				"method": "PUT",
 				"header": [],
 				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "fullname",
-							"value": "Maryam",
-							"type": "text"
-						},
-						{
-							"key": "password",
-							"value": "999900000",
-							"type": "text"
+					"mode": "raw",
+					"raw": "{\r\n    \"fullname\":\"Arezo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
 						}
-					]
+					}
 				},
 				"url": {
-					"raw": "http://localhost:3030/users/630e00241817bc4fbccdcf87",
+					"raw": "http://localhost:3030/users/630f187a050f6582aeba4804",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -103,7 +97,7 @@
 					"port": "3030",
 					"path": [
 						"users",
-						"630e00241817bc4fbccdcf87"
+						"630f187a050f6582aeba4804"
 					]
 				}
 			},

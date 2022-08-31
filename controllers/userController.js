@@ -7,7 +7,6 @@ const User = require("../models/User");
 exports.createUser = async (req, res, next) => {
   try {
     let time = Math.round(new Date().getTime());
-    console.log(req.body);
     await User.userValidation(req.body);
     const { fullname, email, password } = req.body;
     const user = await User.findOne({ email });
@@ -54,7 +53,7 @@ exports.createUser = async (req, res, next) => {
   }
 };
 
-// //* RETURNS ALL THE USERS IN THE DATABASE
+//* RETURNS ALL THE USERS IN THE DATABASE
 exports.getUsersList = async (req, res, next) => {
   try {
     User.find({}, function (err, user) {
@@ -69,6 +68,14 @@ exports.getUsersList = async (req, res, next) => {
 //* DELETES A USER FROM THE DATABASE
 exports.deleteUser = async (req, res, next) => {
   try {
+    const user = await User.findById(req.params.id)
+    if(!user) {
+      const error = new Error(
+        "The user does not exist"
+      );
+      error.statusCode = 404;
+      throw error;
+    }
     User.findByIdAndRemove(req.params.id, function (err, user) {
       const message = ["User deleted"];
       res.status(200).json({ status: true, message, data: {} });
@@ -81,6 +88,14 @@ exports.deleteUser = async (req, res, next) => {
 //* UPDATES A SINGLE USER IN THE DATABASE
 exports.updateUser = async (req, res, next) => {
   try {
+    const user = await User.findById(req.params.id)
+    if(!user) {
+      const error = new Error(
+        "The user does not exist"
+      );
+      error.statusCode = 404;
+      throw error;
+    }
     User.findByIdAndUpdate(
       req.params.id,
       req.body,
